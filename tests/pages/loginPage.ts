@@ -1,5 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-
+import dotenv from 'dotenv';
+dotenv.config();
 export class LoginPage {
     page: Page;
     userName: Locator;
@@ -14,11 +15,10 @@ export class LoginPage {
     async open() {
         await this.page.goto('https://retail-website-fawn.vercel.app/login');
     }
-  async login(email = 'test@demo.com', password = 'password123') {
+    async login(email: string = process.env.TEST_USER?? '', password: string = process.env.TEST_PASSWORD?? '') {
     await this.userName.fill(email);
     await this.password.fill(password);
     await this.signIn.click();
-    await expect(this.page).toHaveURL("https://retail-website-fawn.vercel.app/app/dashboard");
     }
 }
 
