@@ -13,8 +13,6 @@ test('End to end automation of retail website', async ({ page }) => {
   await loginPage.open();
   await loginPage.login();
 
-  // await expect(page.getByRole('link', { name: 'Products' })).toBeVisible();
-
   await productsPage.openProducts();
   await productsPage.addProduct('Automation seed 1776619184454');
   await productsPage.addProduct('Automation seed 177662206514')
