@@ -84,12 +84,3 @@ export class DashboardPage{
         }
     }
 }
-// await page.getByRole('link', { name: 'Dashboard' }).click();
-//   await page.getByText('TodayRevenueUS$12,450.').click();
-//   await page.getByText('Operations5 shipments').click();
-//   await page.getByText('ActivityOrder #5033').click();
-//   await page.getByRole('button', { name: 'Reorder widgets' }).click();
-//   await page.getByText('US$').click();
-//   await page.getByText('86').click();
-//   await page.getByText('3', { exact: true }).click();
-//   await page.getByText('Order #5033 confirmed').click();

@@ -11,7 +11,7 @@ export class LoginPage {
         this.userName = page.getByRole('textbox', { name: 'Email' });
         this.password = page.getByRole('textbox', { name: 'Password' });
         this.signIn = page.getByRole('button', { name: 'Sign in' });
-  }
+    }
     async open() {
         await this.page.goto('https://retail-website-fawn.vercel.app/login');
     }
@@ -19,6 +19,7 @@ export class LoginPage {
     await this.userName.fill(email);
     await this.password.fill(password);
     await this.signIn.click();
+    await expect(this.page).toHaveURL("https://retail-website-fawn.vercel.app/app/dashboard");
     }
 }
 
